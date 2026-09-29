@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="sr-Latn">
+<head>
+<meta charset="utf-8">
+<title>Tabla frizura — pregled svih stilova (dev)</title>
+<style>
+  body { margin: 0; background: #e8dcc4; font: 14px/1.4 system-ui, sans-serif; color: #2a1a10; }
+  .grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; padding: 12px; }
+  figure { margin: 0; background: #231d19; border-radius: 200px 200px 6px 6px; overflow: hidden; }
+  figcaption { background: #e8dcc4; padding: 6px 0; text-align: center; }
+  svg { display: block; width: 100%; height: auto; }
+</style>
+</head>
+<body>
+<!-- Dev alat: sve frizure jedna do druge, isti model/ugao/svetlo. Otvoriti: /tools/hair-sheet.html -->
+<div class="grid" id="g"></div>
+<script type="module">
+  import { HEAD_VB, hairDefs, hairGroup, mannequin, STYLE_KEYS } from '../js/art/hair-art.js';
+  document.getElementById('g').innerHTML = STYLE_KEYS.map((k, i) => `
+    <figure><svg viewBox="${HEAD_VB}">${i === 0 ? hairDefs : ''}${mannequin.replace('<g class="hair-slot"></g>', hairGroup(k))}</svg><figcaption>${k}</figcaption></figure>`).join('');
+</script>
+</body>
+</html>

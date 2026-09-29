@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="sr-Latn" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>BRIJAČNICA 1920 — šišanje, brada i brijanje britvom</title>
+  <meta name="description" content="Koncept sajta berbernice: usluge i cene, frizure, prostor i zakazivanje termina.">
+  <meta name="theme-color" content="#241812">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23241812'/%3E%3Cpath d='M18 50V30a14 14 0 0 1 28 0v20z' fill='none' stroke='%23F2B35E' stroke-width='4'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Young+Serif&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/booking.css">
+  <script>
+    /* Režim animacija pre prvog iscrtavanja. ?motion=full | ?motion=reduce (dev), inače sistemska podešavanja. */
+    (function () {
+      var q = new URLSearchParams(location.search).get('motion');
+      var reduce = q ? q === 'reduce' : matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var d = document.documentElement;
+      d.classList.remove('no-js');
+      d.classList.add(reduce ? 'motion-reduce' : 'motion-full');
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#sadrzaj">Preskoči na sadržaj</a>
+
+  <!-- Komponente se iscrtavaju iz js/content.js (vidi js/main.js) -->
+  <div id="scene-defs"></div>
+  <header id="nav-root"></header>
+  <div id="door-root"></div>
+
+  <main id="sadrzaj">
+    <section id="pocetak" class="hero" aria-labelledby="hero-title"></section>
+    <section id="o-nama" class="intro t-mirror" aria-labelledby="intro-title"></section>
+    <section id="usluge" class="services section t-paper" aria-labelledby="services-title"></section>
+    <section id="stilovi" class="styles t-paper" aria-labelledby="styles-title"></section>
+    <section id="prostor" class="gallery t-dark" aria-labelledby="gallery-title"></section>
+    <section id="proces" class="process section t-paper" aria-labelledby="process-title"></section>
+    <section id="tim" class="team section t-paper" aria-labelledby="team-title"></section>
+    <div id="most" class="bridge t-olive" aria-hidden="true"></div>
+    <section id="zakazivanje" class="booking section t-olive" aria-labelledby="booking-title"></section>
+    <section id="kontakt" class="contact section t-paper" aria-labelledby="contact-title"></section>
+  </main>
+  <footer id="footer-root" class="footer t-dark"></footer>
+  <div id="dock-root"></div>
+
+  <noscript>
+    <div style="padding:2rem;background:#E8DCC4;color:#2a1a10;font:16px/1.5 sans-serif">
+      Ovaj koncept sajta koristi JavaScript za prikaz sadržaja. Uključite JavaScript ili nas pozovite telefonom.
+    </div>
+  </noscript>
+
+  <!-- GSAP + ScrollTrigger: vremenske linije vezane za skrol. Bez njih sajt radi u mirnom režimu. -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" defer></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
