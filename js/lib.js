@@ -51,6 +51,14 @@ export function goTo(target) {
   setTimeout(() => h.focus({ preventScroll: true }), reduce ? 0 : 700);
 }
 
+/* Ponovo izračunaj pozicije skrol-scena kad se promeni visina sadržaja */
+let relayoutT = 0;
+export function relayout() {
+  if (!window.ScrollTrigger || !motion.full) return;
+  clearTimeout(relayoutT);
+  relayoutT = setTimeout(() => window.ScrollTrigger.refresh(), 120);
+}
+
 /* Radno vreme */
 export const dayNames = ['Nedelja', 'Ponedeljak', 'Utorak', 'Sreda', 'Četvrtak', 'Petak', 'Subota'];
 export const dayShort = ['Ned', 'Pon', 'Uto', 'Sre', 'Čet', 'Pet', 'Sub'];

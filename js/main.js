@@ -58,4 +58,16 @@ if (motion.full) {
   // fontovi menjaju visine — preračunaj kačenja kad stignu
   document.fonts?.ready.then(() => ScrollTrigger.refresh());
   window.addEventListener('load', () => ScrollTrigger.refresh());
+
+  // Kad se sadržaj promeni (npr. otvoren red u cenovniku), pozicije kačenja
+  // ispod njega moraju ponovo da se izračunaju — inače se galerija zakači
+  // prerano i preklopi sekciju frizura.
+  let lastH = 0; let t = 0;
+  ScrollTrigger.addEventListener('refresh', () => { lastH = document.body.scrollHeight; });
+  new ResizeObserver(() => {
+    clearTimeout(t);
+    t = setTimeout(() => {
+      if (Math.abs(document.body.scrollHeight - lastH) > 2) ScrollTrigger.refresh();
+    }, 200);
+  }).observe(document.querySelector('main'));
 }

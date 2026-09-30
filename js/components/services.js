@@ -4,7 +4,7 @@
    Kad tabla uđe u kadar, linija mašinice prelazi preko nje i otkriva redove.
    ========================================================================== */
 import { content } from '../content.js';
-import { $, $$, esc, price, mins, motion, demoTag, preselect, icon } from '../lib.js';
+import { $, $$, esc, price, mins, motion, demoTag, preselect, icon, relayout } from '../lib.js';
 
 export function renderServices() {
   $('#usluge').innerHTML = `
@@ -75,10 +75,10 @@ export function initServices() {
     const { gsap } = window;
     if (open) {
       panel.hidden = false;
-      gsap.fromTo(panel, { height: 0 }, { height: 'auto', duration: 0.45, ease: 'power3.out' });
+      gsap.fromTo(panel, { height: 0 }, { height: 'auto', duration: 0.45, ease: 'power3.out', onComplete: relayout });
       gsap.fromTo($('.svc__detail-in', panel), { x: -18, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 0.5, delay: 0.08, ease: 'power3.out' });
     } else {
-      gsap.to(panel, { height: 0, duration: 0.3, ease: 'power2.in', onComplete: () => { panel.hidden = true; panel.style.height = ''; } });
+      gsap.to(panel, { height: 0, duration: 0.3, ease: 'power2.in', onComplete: () => { panel.hidden = true; panel.style.height = ''; relayout(); } });
     }
   }
 
