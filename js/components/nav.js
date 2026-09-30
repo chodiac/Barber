@@ -22,7 +22,6 @@ export function renderNav() {
       <nav class="nav__links" aria-label="Glavna navigacija">
         ${LINKS.map(([h, t]) => `<a href="${h}">${t}</a>`).join('')}
       </nav>
-      <a class="nav__phone" href="tel:${esc(c.phoneHref)}">${esc(c.phone)}</a>
       <a class="btn btn--small nav__cta" href="${bookingHref()}" data-book>Zakaži termin</a>
       <button class="nav__menu" type="button" aria-expanded="false" aria-controls="drawer"><span></span><span class="sr-only">Otvori meni</span></button>
     </div>

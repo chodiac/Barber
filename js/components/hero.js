@@ -201,13 +201,15 @@ export function initHero() {
       // kamera se istovremeno poravna sa sredinom stakla
       x: () => stage.offsetWidth / 2 - origin()[0] + geom.W * 0.03,
       y: () => stage.offsetHeight / 2 - origin()[1] + geom.H * 0.03,
-      yPercent: cfg.key === 'chair' ? 18 : cfg.key === 'front' ? -22 : 0,
+      yPercent: cfg.key === 'chair' ? 40 : cfg.key === 'front' ? -22 : 0,
       transformOrigin: () => `${origin()[0]}px ${origin()[1]}px`,
       ease: 'power2.in', duration: 1,
     }, 0);
   });
   tl.to('.mirror-fog', { attr: { opacity: 1 }, duration: 0.42, ease: 'power1.in' }, 0.58)
-    .to('.scene__grade', { opacity: 0, duration: 0.5 }, 0.5);
+    .to('.scene__grade', { opacity: 0, duration: 0.5 }, 0.5)
+    // stolica i lampe nestaju pre kraja, da ništa ne ostane ispred stakla (uspravni ekrani)
+    .to('.layer--chair, .layer--front', { autoAlpha: 0, duration: 0.25, ease: 'power1.in' }, 0.6);
 
   ScrollTrigger.addEventListener('refreshInit', layout);
 }

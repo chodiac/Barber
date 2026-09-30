@@ -202,7 +202,6 @@ const shelfItems = /* svg */ `
   <g>
     <rect x="1344" y="416" width="58" height="54" rx="4" fill="#e8dcc4"/>
     <rect x="1344" y="412" width="58" height="10" rx="3" fill="#b06f42"/>
-    <text x="1373" y="450" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#3b2416" letter-spacing="1">POMADA</text>
     <rect x="1414" y="386" width="34" height="84" rx="5" fill="url(#g-jar)"/>
     <rect x="1411" y="380" width="40" height="10" rx="2" fill="#16120f"/>
     <rect x="1462" y="428" width="50" height="42" rx="4" fill="#5a3a24"/>
@@ -284,8 +283,6 @@ export const mirror = /* svg */ `
         <rect x="12" y="12" width="108" height="210" fill="url(#g-daylight)"/>
         <rect x="12" y="236" width="108" height="170" fill="#2b1c12"/>
         <line x1="66" y1="12" x2="66" y2="222" stroke="#1e140d" stroke-width="5"/>
-        <text transform="translate(66 104) scale(-1 1)" text-anchor="middle" font-family="Young Serif, Georgia, serif" font-size="13" letter-spacing="1.5" fill="#f1d7a3" opacity=".75">BRIJAČNICA</text>
-        <text transform="translate(66 124) scale(-1 1)" text-anchor="middle" font-family="Young Serif, Georgia, serif" font-size="12" letter-spacing="3" fill="#f1d7a3" opacity=".75">1920</text>
         <circle cx="100" cy="320" r="5" fill="url(#g-brass)"/>
       </g>
       <!-- klupa za čekanje i čiviluk u odrazu -->

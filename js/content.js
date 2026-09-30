@@ -35,7 +35,7 @@ export const content = {
 
   hero: {
     eyebrow: 'Berbernica · po zakazivanju',
-    title: ['Sedni.', 'Ostalo je zanat.'],
+    title: ['Sedi.', 'Ostalo je zanat.'],
     lead: 'Šišanje, brada i brijanje britvom, s dovoljno vremena da sve bude urađeno kako treba.',
     primary: 'Zakaži termin',
     secondary: 'Istraži berbernicu',
